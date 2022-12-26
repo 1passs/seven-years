@@ -121,16 +121,8 @@ export class TLApp<
         fn: () => this.api.zoomIn(),
       },
       {
-        keys: 'mod+z',
-        fn: () => this.undo(),
-      },
-      {
         keys: 'mod+x',
         fn: () => this.cut(),
-      },
-      {
-        keys: 'mod+shift+z',
-        fn: () => this.redo(),
       },
       {
         keys: '[',
@@ -194,7 +186,7 @@ export class TLApp<
         },
       },
       {
-        keys: 'mod+c mod+g',
+        keys: 'shift+g',
         fn: () => {
           this.api.toggleGrid()
         },
@@ -283,9 +275,9 @@ export class TLApp<
   @computed get serialized(): TLDocumentModel<S> {
     return {
       // currentPageId: this.currentPageId,
-      selectedIds: Array.from(this.selectedIds.values()),
-      pages: Array.from(this.pages.values()).map(page => page.serialized),
-      assets: this.getCleanUpAssets(),
+      // selectedIds: Array.from(this.selectedIds.values()),
+      // pages: Array.from(this.pages.values()).map(page => page.serialized),
+      // assets: this.getCleanUpAssets(),
     }
   }
 
